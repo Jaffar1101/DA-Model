@@ -1,0 +1,99 @@
+{
+  "name": "AcademicRecord",
+  "type": "object",
+  "properties": {
+    "student_id": {
+      "type": "string",
+      "description": "Reference to student"
+    },
+    "semester": {
+      "type": "string",
+      "description": "Semester (e.g., Fall 2024)"
+    },
+    "course_code": {
+      "type": "string",
+      "description": "Course identifier"
+    },
+    "course_name": {
+      "type": "string",
+      "description": "Course title"
+    },
+    "credits": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Course credit hours"
+    },
+    "grade": {
+      "type": "string",
+      "enum": [
+        "A+",
+        "A",
+        "A-",
+        "B+",
+        "B",
+        "B-",
+        "C+",
+        "C",
+        "C-",
+        "D+",
+        "D",
+        "F",
+        "W",
+        "I"
+      ],
+      "description": "Final grade received"
+    },
+    "grade_points": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 4,
+      "description": "Grade point value"
+    },
+    "attendance_rate": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Attendance percentage for this course"
+    },
+    "internal_assessments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "assessment_type": {
+            "type": "string",
+            "enum": [
+              "Quiz",
+              "Midterm",
+              "Assignment",
+              "Project",
+              "Presentation"
+            ]
+          },
+          "score": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100
+          },
+          "max_score": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100
+          },
+          "date": {
+            "type": "string",
+            "format": "date"
+          }
+        }
+      },
+      "description": "Internal assessment records"
+    }
+  },
+  "required": [
+    "student_id",
+    "semester",
+    "course_code",
+    "course_name",
+    "credits"
+  ]
+}

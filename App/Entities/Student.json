@@ -1,0 +1,120 @@
+{
+  "name": "Student",
+  "type": "object",
+  "properties": {
+    "student_id": {
+      "type": "string",
+      "description": "Unique student identifier"
+    },
+    "full_name": {
+      "type": "string",
+      "description": "Student's full name"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "description": "Student email address"
+    },
+    "year_level": {
+      "type": "string",
+      "enum": [
+        "1st Year",
+        "2nd Year",
+        "3rd Year",
+        "4th Year",
+        "Graduate"
+      ],
+      "description": "Current academic year level"
+    },
+    "major": {
+      "type": "string",
+      "description": "Academic major/program"
+    },
+    "current_gpa": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 4,
+      "description": "Current cumulative GPA"
+    },
+    "previous_semester_gpa": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 4,
+      "description": "Previous semester GPA"
+    },
+    "attendance_percentage": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Overall attendance percentage"
+    },
+    "internal_assessment_avg": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Average internal assessment score"
+    },
+    "extracurricular_participation": {
+      "type": "string",
+      "enum": [
+        "High",
+        "Medium",
+        "Low",
+        "None"
+      ],
+      "default": "None",
+      "description": "Level of extracurricular involvement"
+    },
+    "socioeconomic_status": {
+      "type": "string",
+      "enum": [
+        "High",
+        "Medium",
+        "Low",
+        "Not Disclosed"
+      ],
+      "default": "Not Disclosed",
+      "description": "Socioeconomic background"
+    },
+    "predicted_gpa": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 4,
+      "description": "AI-predicted GPA for next semester"
+    },
+    "risk_level": {
+      "type": "string",
+      "enum": [
+        "Low",
+        "Medium",
+        "High"
+      ],
+      "description": "Academic risk assessment"
+    },
+    "confidence_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Prediction confidence percentage"
+    },
+    "recommendations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "AI-generated recommendations"
+    },
+    "last_prediction_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of last AI prediction"
+    }
+  },
+  "required": [
+    "student_id",
+    "full_name",
+    "email",
+    "year_level",
+    "major"
+  ]
+}
